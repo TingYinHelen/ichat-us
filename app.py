@@ -40,6 +40,10 @@ def webhook():
 
 def processRequest(req):
     speech = chatbot.get_response(req.get('result').get('resolvedQuery'))
+
+    print("Response:")
+    print(speech)
+
     return {
         "speech": speech,
         "displayText": speech,
