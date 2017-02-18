@@ -10,11 +10,10 @@ import os
 from flask import Flask
 from flask import request
 from flask import make_response
+from chatterbot import ChatBot
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
-from chatterbot import ChatBot
 
 chatbot = ChatBot(
     'Ron Obvious',
