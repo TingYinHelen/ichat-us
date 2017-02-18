@@ -39,7 +39,14 @@ def webhook():
     return r
 
 def processRequest(req):
-    return chatbot.get_response(req)
+    speech = chatbot.get_response(req.get('result').get('resolvedQuery'))
+    return {
+        "speech": speech,
+        "displayText": speech,
+        # "data": data,
+        # "contextOut": [],
+        "source": "ichat-us"
+    }
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
