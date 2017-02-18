@@ -42,6 +42,7 @@ def webhook():
 
 def processRequest(req):
     speech = chatbot.get_response(req.get('result').get('resolvedQuery'))
+    speech = str(speech)
 
     print("Response:")
     print(speech)
